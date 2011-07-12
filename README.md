@@ -11,4 +11,4 @@ Brandon Sandrowicz <brandon@sandrowicz.org>
 License
 -------
 
-See LICENSE file.
+BSD 3-clause license. See LICENSE file for terms.
