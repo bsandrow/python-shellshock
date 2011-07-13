@@ -23,6 +23,11 @@ allows the user to write to it, and that data will be written to
 all associated files, as well as (optionally) stderr and/or
 stdout.
 
+Apparently I can't claim that this is a file-like object without a
+read() method, but this is a write-only object, so I don't see the
+need to define it. Personally, I view calling the read() method on a
+file that was open for writing only as an undefined operation.
+
 Author
 ------
 
