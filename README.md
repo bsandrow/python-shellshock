@@ -20,7 +20,7 @@ shellshock.tee
 The purpose of **Tee** is to allow the unix 'tee' utility to be
 easily emulated within Python. It creates a file-like object that
 allows the user to write to it, and that data will be written to
-all files associated files, as well as (optionally) stderr and/or
+all associated files, as well as (optionally) stderr and/or
 stdout.
 
 Author
