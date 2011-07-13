@@ -2,6 +2,7 @@
 try:
     from setuptools import setup
 except ImportError:
+    print "Falling back to distutils. Functionality may be limited."
     from distutils.core import setup
 
 config = {
