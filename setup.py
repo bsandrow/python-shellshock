@@ -1,0 +1,18 @@
+
+try:
+    from setuptools import setup
+except ImportError:
+    from distutils.core import setup
+
+config = {
+    'description'       : 'A set of tools for shell operations in Python',
+    'author'            : 'Brandon Sandrowicz',
+    'url'               : 'http://github.com/bsandrow/python-shellshock',
+    'author_email'      : 'brandon@sandrowicz.org',
+    'version'           : 0.1,
+    'install_requires'  : [],
+    'packages'          : ['shellshock'],
+    'name'              : 'python-shellshock',
+}
+
+setup(**config)
