@@ -11,7 +11,7 @@ config = {
     'url'               : 'http://github.com/bsandrow/python-shellshock',
     'author_email'      : 'brandon@sandrowicz.org',
     'version'           : 0.1,
-    'install_requires'  : [],
+    'install_requires'  : ['nose', 'mock'],
     'packages'          : ['shellshock'],
     'name'              : 'python-shellshock',
 }
