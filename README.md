@@ -3,6 +3,46 @@ ShellShock
 
 A collection of shell utilities/helpers for Python.
 
+shellshock.runner
+-----------------
+
+    import sys
+    import shellshock.runner
+
+    class MyRunner(shellshock.runner.Runner):
+        __optspec__ = [
+            { 'args': ['-f', '--file'], 'dest':'filename' },
+            { 'args': ['-n', '--dry-run'], 'dest':'dryrun', 'action': 'store_true' },
+        ]
+
+        def run(self):
+            if self.options.dryrun:
+                print "Dry Run!"
+                sys.exit()
+            print "File: %s" % (self.options.file)
+
+    MyRunner().run()
+
+Automatically creates an option parser (at `self._optparser`) using optparse,
+and converts `__optspec__` into `self.options` and `self.args`. The original
+args (prior parsing) are stored in `self._orig_args`. Parses `sys.argv` by
+default, if no args are passed into the class. If you want to send no args,
+then do something like this:
+
+    MyRunner([]).run()
+
+Basically passes the each dict directly to a `parser.add_option()` call as
+`**kwargs`, with the 'args' key-value pair stripped and the value is passed
+through to `add_option()` as `*args`. Therefore:
+
+    __optspec__ = [
+        { 'args': ['-f','--file'], 'dest':'filename' }
+    ]
+
+is equivalent to:
+
+    parser.add_option('-f', '--file', dest='filename')
+
 shellshock.tee
 --------------
 
